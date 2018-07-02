@@ -1,5 +1,12 @@
 # {{ ansible_managed }}
 
+[mysql]
+{% if mysql_auto_rehash %}
+auto-rehash
+{% else %}
+no-auto-rehash
+{% endif %}
+
 [client]
 #password = your_password
 port = {{ mysql_port }}
